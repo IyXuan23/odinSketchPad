@@ -16,7 +16,7 @@ function createGrid(gridContainer, NUM_OF_SQUARES) {
 
             //add class to colour the square
             square.addEventListener('mouseover', function() {
-                
+
                 this.style.backgroundColor = 'blue';
             })
 
@@ -28,5 +28,25 @@ function createGrid(gridContainer, NUM_OF_SQUARES) {
     
 }
 
+function createResetButton(body) {
+
+    var resetButton = document.createElement('button');
+    resetButton.textContent = 'Change Size';
+    resetButton.classList.add('resetButton');
+
+    resetButton.addEventListener('click', function() {
+        var newValue = window.prompt("How many boxes do you want on each side?");
+        //if user hits cancel
+        if (newValue == null) {
+            return;
+        }
+        console.log('change value');
+    })
+
+    body.prepend(resetButton);
+}
+
+
+createResetButton(document.body);
 const gridContainer = document.querySelector('.container');
 createGrid(gridContainer, NUM_OF_SQUARES);

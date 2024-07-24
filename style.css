@@ -1,12 +1,27 @@
-.square {
+.container {
 
-    width: 20px;
-    height: 20px;
+    display: flex;
+    flex-direction: column;
 
-    border: 1px grey solid;
+    width: 960px;
+    height: 960px;
+
+    border: black solid 1px;
+}
+
+.resetButton {
+
+    padding: 4px;
+    margin-bottom: 4px;
 }
 
 .row {
 
     display: flex;
+    flex-grow: 1;
+}
+
+.square {
+    flex-grow: 1;
+    border: 1px grey solid;
 }
