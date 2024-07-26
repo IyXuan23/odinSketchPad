@@ -40,7 +40,33 @@ function createResetButton(body) {
         if (newValue == null) {
             return;
         }
-        console.log('change value');
+
+        else if (newValue != null) {
+            newValue = parseInt(newValue);
+
+            //check if invalid input 
+            if (!Number.isInteger(newValue) || newValue > 100) {
+                console.log('invalid value');
+                return;
+            }
+                    
+            //change value
+            else {
+                console.log('change value');
+                
+                //remove existing grid
+                var currentContainer = document.querySelector('.container');
+                document.body.removeChild(currentContainer);
+
+                //create new container and grid
+                var newContainer = document.createElement('div');
+                newContainer.classList.add('container');
+                document.body.appendChild(newContainer);
+
+                createGrid(newContainer, newValue);
+
+            }
+        }
     })
 
     body.prepend(resetButton);
