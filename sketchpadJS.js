@@ -35,7 +35,7 @@ function createResetButton(body) {
     resetButton.classList.add('resetButton');
 
     resetButton.addEventListener('click', function() {
-        var newValue = window.prompt("How many boxes do you want on each side?");
+        var newValue = window.prompt("How many boxes do you want on each side? (Max 100)");
         //if user hits cancel
         if (newValue == null) {
             return;
